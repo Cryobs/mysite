@@ -65,8 +65,22 @@ main {
   margin: 7vh auto;
 }
 
-#logo {
+main, nav, #copyright {
+  max-width: var(--width);
+  width: min(95%, var(--width)); 
+  min-width: 0;                 
+}
+
+
+#logo-container {
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#logo { 
+  flex-shrink: 1;
+  font-size: 16px;
 }
 
 
@@ -85,11 +99,6 @@ footer {
   background-color: var(--bg);
 }
 
-#copyright { 
-  max-width: var(--width);
-  min-width: var(--width);
-
-}
 
 b {
   color: var(--white);
@@ -115,3 +124,6 @@ b {
   text-align: center;
   font-size: 2vh;
 }
+
+
+

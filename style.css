@@ -1,6 +1,6 @@
 :root {
   --bg: #000000;
-  --fg: #c0c0c0;
+  --fg: #CCC;
   --red: #800000;
   --red-l: #FF0000;
   --green: #008000;
@@ -21,82 +21,89 @@
 
 * {
   font-family: "IBM VGA8", monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg);
+  line-height: 1.5;
   color: var(--fg);
+  font-size: 1rem;
+}
+
+.page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   border-bottom: var(--fg) solid 1px;
-  height: 5vh;
+  padding: 10px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  position: fixed;
-  left: 8px;
-  right: 8px;
-  top: 0;
-  height: 5vh;
-  background-color: var(--bg);
 }
 
 nav{
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   max-width: var(--width);
-  min-width: var(--width);
-  font-size: 2vh;
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1.2rem;
 }
 
 
 a {
   color: var(--white); 
+  text-decoration: none;
 }
 
 
 main {
-  border: var(--fg) solid 1px;
   padding:  20px;
   max-width: var(--width);
-  min-width: var(--width);
-  margin: 7vh auto;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
 }
-
-main, nav, #copyright {
-  max-width: var(--width);
-  width: min(95%, var(--width)); 
-  min-width: 0;                 
-}
-
 
 #logo-container {
   text-align: center;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 #logo { 
-  flex-shrink: 1;
-  font-size: 16px;
+  white-space: pre;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 
 footer {
   border-top: var(--fg) solid 1px;
-  position: fixed;
-  left: 8px;
-  right: 8px;
-  bottom: 0;
-  height: 5vh;
-
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: var(--bg);
+
+  text-align: center;
 }
 
 
@@ -106,24 +113,59 @@ b {
 
 .fetch {
   display: flex;
+  flex-direction: 
+  flex-wrap: wrap;
+  gap: 20px;
   color: var(--white);
+  margin-top: 20px;
 }
 
+#fetch-art {
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+#fetch-info {
+  min-width: 200px;
+}
+
+
+pre {
+  line-height: 1.1;
+}
 
 
 .red {
   color: var(--red-l);
 }
 
-#fetcha-header {
-  text-align: center;
-  font-size: 2vh;
-}
-
+#fetcha-header,
 #projects-header {
   text-align: center;
-  font-size: 2vh;
 }
+
+
+@media (max-width: 768px) {
+  nav {
+    font-size: 1rem;
+  }
+
+  #fetch-art {
+    display: none;
+  }
+
+  #logo { 
+    font-size: calc(1vw + 0.4rem);
+  }
+
+
+  pre {
+    font-size: 0.9rem;
+  }
+
+}
+
 
 
 
